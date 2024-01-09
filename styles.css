@@ -22,31 +22,41 @@ header {
   padding: 1rem;
   text-align: center;
   height: 10%;
+  box-shadow: 0.05rem 0.05rem 4rem var(--gris-oscuro);
+}
+
+header > h1 {
+  font-size: 2.5rem;
+  text-shadow: 0.1rem 0.01rem 0.1rem var(--oscuro-principal);
+}
+
+header > p {
+  font-size: 1.1rem;
 }
 
 main{
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   height: 70%;
 }
 
 #ingresoPalabras {
-  display: flex;
-  flex-direction: column;
   width: 30%;
-  height: 500px;
+  height: 485px;
   padding: 0.7rem;
   background-color: var(--oscuro-principal);
   color: var(--fondo-claro);
   border-radius: 1rem;
   margin-right: 2rem;
+  box-shadow: 0.05rem 0.05rem 4rem var(--gris-oscuro);
 }
 
 #headerFormulario {
-  text-align: left;
   margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
 }
 
 form {
@@ -58,6 +68,7 @@ form {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: baseline;
+  flex-direction: row;
   
 }
 
@@ -72,29 +83,28 @@ form {
   border-radius: 0.5rem;
   font-size: 1.2rem;
   padding-left: 0.5rem;
+  border: none;
 }
 
 #inputPalabras {
   width: 100%;
   height: 40vh;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
-  word-break: break-all;
-  overflow: auto;
-
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
 }
 
 #dimensiones {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: baseline;
-  
 }
 
 #dimensiones > p {
   padding-right: 2rem;
-
 }
 
 #ancho, #largo {
@@ -121,27 +131,36 @@ form {
   border-radius: 0.5rem;
 }
 
+#submit {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 #btnCocinar {
   width: 80%;
   height: 2rem;
   border-radius: 0.5rem;
   background-color: var(--claro-principal);
   color: var(--oscuro-principal);
-  font-weight: bold;
   font-size: 1.2rem;
-  text-align: center;
-  align-items: center;
+  margin-top: 0.6rem;
+  border: none;
+  transition: ease-in-out 0.2s;
 }
+
+#btnCocinar:hover {
+  background-color: var(--fondo-oscuro);
+  color: var(--claro-principal);
+  cursor: pointer;
+}
+
 
 #sopaLetras {
   width: 70%;
   display: flex;
   flex-direction: column;
-}
-
-#sopaGenerada {
-  width: 100%;
-  height: auto;
+  font-size: 1.1rem;
 }
 
 #headerSopa {
@@ -150,5 +169,17 @@ form {
   padding-left: 1rem;
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 5%;
+  box-shadow: 0.05rem 0.05rem 4rem var(--gris-oscuro);
+}
+
+#sopaGenerada {
+  background-image: url(assets/platinumSword.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 95%;
 }
