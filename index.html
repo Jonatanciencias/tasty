@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <title>tasty</title>
 </head>
 <body>
   <header id="header">
-
     <h1>Tasty</h1>
     <p>Crea tu sopa de letras</p>
   </header>
 
-  <main>
+  <main id="contenedorPrincipal">
     <section id="ingresoPalabras">
-      <h2>Lista de palabras</h2>
+      <h2 id="headerFormulario">Lista de palabras</h2>
 
       <form action="">
         <div id="titulo">
           <p>Titulo</p>
-          <input type="text">
+          <input type="text" id="inputTitulo">
         </div>
+
+        <input type="text" id="inputPalabras" placeholder="Separa cada palabra con una coma, por ejemplo: gato, perro">
 
         <div id="dimensiones">
           <p>Dimensiones</p>
@@ -37,32 +38,25 @@
           </select>
         </div>
 
-        <div id="listaPalabras">
-          <input type="text">
-          <p>separa cada palabra con una coma</p>
-
-        </div>
-
         <div id="dificultad">
+          <p>Dificultad</p>
           <select name="nivel" id="nivel">
             <option value="facil">Facil</option>
             <option value="medio">Medio</option>
             <option value="dificil">Dificil</option>
           </select>
-
         </div>
 
-        <input type="submit" value="Cocinar sopa">
+        <input type="submit" value="Cocinar" id="btnCocinar">
 
       </form>
     </section>
 
     <section id="sopaLetras">
-      <h2>Sopa de letras</h2>
+      <h2 id="headerSopa">Sopa de letras</h2>
+      <img id="sopaGenerada" src="assets/aL_blurred.png" alt="sopa de letras">
     </section>
-    <div id="imgSopa">
-
-    </div>
+ 
 
   </main>
   <script src="app.js"></script>
