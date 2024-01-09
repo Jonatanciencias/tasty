@@ -1,0 +1,154 @@
+:root {  
+--oscuro-principal: #26428b;
+--claro-principal: #daa520;
+--gris-oscuro: #343434;
+--fondo-oscuro: #010203;
+--fondo-claro: #e5e4e2;
+--resaltar: #fe3c71;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Oswald', sans-serif;
+}
+
+header {
+  background-color: var(--fondo-claro);
+  color: var(--oscuro-principal);
+  padding: 1rem;
+  text-align: center;
+  height: 10%;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  width: 100%;
+  height: 70%;
+}
+
+#ingresoPalabras {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 500px;
+  padding: 0.7rem;
+  background-color: var(--oscuro-principal);
+  color: var(--fondo-claro);
+  border-radius: 1rem;
+  margin-right: 2rem;
+}
+
+#headerFormulario {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#titulo {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  
+}
+
+#titulo > p {
+  padding-right: 0.5rem;
+  width: 15%;
+}
+
+#inputTitulo {
+  width: 85%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
+#inputPalabras {
+  width: 100%;
+  height: 40vh;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  word-break: break-all;
+  overflow: auto;
+
+}
+
+#dimensiones {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  
+}
+
+#dimensiones > p {
+  padding-right: 2rem;
+
+}
+
+#ancho, #largo {
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+#dificultad {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+}
+
+#dificultad > p {
+  padding-right: 2rem;
+}
+
+#nivel{
+  font-weight: bold;
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#btnCocinar {
+  width: 80%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--claro-principal);
+  color: var(--oscuro-principal);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  align-items: center;
+}
+
+#sopaLetras {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+#sopaGenerada {
+  width: 100%;
+  height: auto;
+}
+
+#headerSopa {
+  background-color: var(--fondo-claro);
+  color: var(--oscuro-principal);
+  padding-left: 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+}
