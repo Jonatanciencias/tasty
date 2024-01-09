@@ -3,9 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>tasty</title>
 </head>
 <body>
+  <header id="header">
+
+    <h1>Tasty</h1>
+    <p>Crea tu sopa de letras</p>
+  </header>
+
+  <main>
+    <section id="ingresoPalabras">
+      <h2>Lista de palabras</h2>
+
+      <form action="">
+        <div id="titulo">
+          <p>Titulo</p>
+          <input type="text">
+        </div>
+
+        <div id="dimensiones">
+          <p>Dimensiones</p>
+          <select name="ancho" id="ancho">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <select name="largo" id="largo">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+        <div id="listaPalabras">
+          <input type="text">
+          <p>separa cada palabra con una coma</p>
+
+        </div>
+
+        <div id="dificultad">
+          <select name="nivel" id="nivel">
+            <option value="facil">Facil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Dificil</option>
+          </select>
+
+        </div>
+
+        <input type="submit" value="Cocinar sopa">
+
+      </form>
+    </section>
+
+    <section id="sopaLetras">
+      <h2>Sopa de letras</h2>
+    </section>
+    <div id="imgSopa">
+
+    </div>
+
+  </main>
+  <script src="app.js"></script>
+
   
 </body>
 </html>
