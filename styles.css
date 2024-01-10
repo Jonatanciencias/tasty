@@ -1,19 +1,19 @@
-:root {  
---oscuro-principal: #26428b;
---claro-principal: #daa520;
---gris-oscuro: #343434;
---fondo-oscuro: #010203;
---fondo-claro: #e5e4e2;
---resaltar: #fe3c71;
+:root {
+  --oscuro-principal: #26428b;
+  --claro-principal: #daa520;
+  --gris-oscuro: #343434;
+  --fondo-oscuro: #010203;
+  --fondo-claro: #e5e4e2;
+  --resaltar: #fe3c71;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 header {
@@ -34,7 +34,7 @@ header > p {
   font-size: 1.1rem;
 }
 
-main{
+main {
   display: flex;
   flex-direction: row;
   padding: 0.5rem;
@@ -69,7 +69,6 @@ form {
   display: flex;
   align-items: baseline;
   flex-direction: row;
-  
 }
 
 #titulo > p {
@@ -107,7 +106,8 @@ form {
   padding-right: 2rem;
 }
 
-#ancho, #largo {
+#ancho,
+#largo {
   padding-right: 1rem;
   margin-right: 0.5rem;
   border-radius: 0.5rem;
@@ -124,7 +124,7 @@ form {
   padding-right: 2rem;
 }
 
-#nivel{
+#nivel {
   font-weight: bold;
   padding-right: 1rem;
   margin-right: 0.5rem;
@@ -155,12 +155,15 @@ form {
   cursor: pointer;
 }
 
-
 #sopaLetras {
   width: 70%;
   display: flex;
   flex-direction: column;
   font-size: 1.1rem;
+  background-image: url(assets/platinumSword.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #headerSopa {
@@ -176,10 +179,7 @@ form {
 }
 
 #sopaGenerada {
-  background-image: url(assets/platinumSword.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 95%;
+  display: flex;
+  flex-direction: row;
 }
+
