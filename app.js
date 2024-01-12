@@ -54,7 +54,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Display the word search puzzle in the DOM
-    // You can improve this part to visualize the puzzle in your graphical interface
-    sopaGenerada.innerText = row.join(' ');
+    // Create a table element
+    const table = document.createElement('table');
+
+    // Iterate over each row in the word search puzzle
+    sopa.forEach(row => {
+      // Create a table row element
+      const tr = document.createElement('tr');
+
+      // Iterate over each cell in the row
+      row.forEach(cell => {
+        // Create a table cell element
+        const td = document.createElement('td');
+        // Set the cell content to the character
+        td.textContent = cell;
+        // Append the cell to the row
+        tr.appendChild(td);
+      });
+
+      // Append the row to the table
+      table.appendChild(tr);
+    });
+
+    // Clear the existing content in sopaGenerada
+    sopaGenerada.innerHTML = '';
+
+    // Append the table to sopaGenerada
+    sopaGenerada.appendChild(table);
   }
 });
