@@ -182,5 +182,6 @@ form {
 #sopaGenerada {
   display: flex;
   flex-direction: row;
+  font-size: 1rem;
 }
 
