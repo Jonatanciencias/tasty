@@ -15,15 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const ancho = parseInt(document.getElementById('ancho').value, 10);
     const largo = parseInt(document.getElementById('largo').value, 10);
 
+    // Get the difficulty level
+    const nivel = document.getElementById('nivel').value;
+
     // Generate the word search puzzle
-    const sopa = generarSopa(palabras, ancho, largo);
+    const sopa = generarSopa(palabras, ancho, largo, nivel);
 
     // Display the word search puzzle
     mostrarSopa(sopa, titulo);
   });
 
   // Function to generate the word search puzzle
-  function generarSopa(palabras, ancho, largo) {
+  function generarSopa(palabras, ancho, largo, nivel) {
     // Create an empty matrix for the word search puzzle
     const sopa = [];
     for (let i = 0; i < largo; i++) {
@@ -35,15 +38,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       sopa.push(row);
     }
-
+  
     // Place the words in the word search puzzle
     palabras.forEach(word => {
       // Logic to place the word in the word search puzzle
-      // You can implement your own rules here
+      // This will depend on the difficulty level
+      switch(nivel) {
+        case "facil":
+          // Logic to place the word vertically
+          break;
+        case "medio":
+          // Logic to place the word vertically and horizontally
+          break;
+        case "dificil":
+          // Logic to place the word vertically, horizontally, and diagonally
+          break;
+      }
     });
-
+  
     return sopa;
   }
+
 
   // Function to display the word search puzzle
   function mostrarSopa(sopa, titulo) {
