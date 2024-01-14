@@ -97,6 +97,9 @@ form {
   text-align: left;
   font-size: 1.1rem;
   background-color: var(--fondo-claro);
+  text-align: start;
+  resize: none;
+  overflow: auto; 
 }
 
 #dimensiones {
@@ -174,5 +177,14 @@ form {
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: 0.05rem 0.05rem 1rem var(--gris-oscuro);
+}
+
+#sopaGenerada {
+align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
