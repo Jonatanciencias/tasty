@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Get the input values from the form
     const titulo = document.getElementById('inputTitulo').value;
-    const palabras = document.getElementById('inputPalabras').value.split(',').map(word => word.trim());
+    const palabras = document.getElementById('inputPalabras').value.split(',').map(word => word.trim().toUpperCase());
     const ancho = parseInt(document.getElementById('ancho').value, 10);
     const largo = parseInt(document.getElementById('largo').value, 10);
 
@@ -45,17 +45,52 @@ document.addEventListener('DOMContentLoaded', function () {
       // This will depend on the difficulty level
       switch(nivel) {
         case "facil":
-          // Logic to place the word vertically
+          placeWordVertically(word);
           break;
         case "medio":
-          // Logic to place the word vertically and horizontally
+          placeWordVertically(word);
+          placeWordHorizontally(word);
           break;
         case "dificil":
-          // Logic to place the word vertically, horizontally, and diagonally
+          placeWordVertically(word);
+          placeWordHorizontally(word);
+          placeWordDiagonally(word);
           break;
       }
     });
-  
+
+    // Function to place the word vertically in the word search puzzle
+    function placeWordVertically(word) {
+      const wordLength = word.length;
+      const startRow = Math.floor(Math.random() * (largo - wordLength + 1));
+      const startCol = Math.floor(Math.random() * ancho);
+
+      for (let i = 0; i < wordLength; i++) {
+        sopa[startRow + i][startCol] = word[i];
+      }
+    }
+
+    // Function to place the word horizontally in the word search puzzle
+    function placeWordHorizontally(word) {
+      const wordLength = word.length;
+      const startRow = Math.floor(Math.random() * largo);
+      const startCol = Math.floor(Math.random() * (ancho - wordLength + 1));
+
+      for (let i = 0; i < wordLength; i++) {
+        sopa[startRow][startCol + i] = word[i];
+      }
+    }
+
+    // Function to place the word diagonally in the word search puzzle
+    function placeWordDiagonally(word) {
+      const wordLength = word.length;
+      const startRow = Math.floor(Math.random() * (largo - wordLength + 1));
+      const startCol = Math.floor(Math.random() * (ancho - wordLength + 1));
+
+      for (let i = 0; i < wordLength; i++) {
+        sopa[startRow + i][startCol + i] = word[i];
+      }
+    }
     return sopa;
   }
 
