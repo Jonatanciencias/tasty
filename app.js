@@ -1,66 +1,66 @@
-// Wait for the DOM to be fully loaded
+// Esperar a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function () {
-  // Get the form element and the element where the generated word search puzzle will be displayed
+  // Obtener el formulario y el elemento donde se mostrará la sopa de letras generada
   const form = document.querySelector('form');
   const sopaGenerada = document.getElementById('sopaGenerada');
 
-  // Add a submit event listener to the form
+  // Agregar un evento de envío al formulario
   form.addEventListener('submit', function (event) {
-    // Prevent the default form submission behavior
+    // Prevenir el comportamiento de envío predeterminado del formulario
     event.preventDefault();
 
-    // Get the input values from the form
+    // Obtener los valores de entrada del formulario
     const titulo = document.getElementById('inputTitulo').value;
     const palabras = document.getElementById('inputPalabras').value.split(',').map(word => word.trim().toUpperCase());
     const ancho = parseInt(document.getElementById('ancho').value, 10);
     const largo = parseInt(document.getElementById('largo').value, 10);
 
-    // Get the difficulty level
+    // Obtener el nivel de dificultad
     const nivel = document.getElementById('nivel').value;
 
-    // Generate the word search puzzle
+    // Generar la sopa de letras
     const sopa = generarSopa(palabras, ancho, largo, nivel);
 
-    // Display the word search puzzle
+    // Mostrar la sopa de letras
     mostrarSopa(sopa, titulo);
   });
 
-  // Function to generate the word search puzzle
+  // Función para generar la sopa de letras
   function generarSopa(palabras, ancho, largo, nivel) {
-    // Create an empty matrix for the word search puzzle
+    // Crear una matriz vacía para la sopa de letras
     const sopa = [];
     for (let i = 0; i < largo; i++) {
       const row = [];
       for (let j = 0; j < ancho; j++) {
-        // Generate a random character (uppercase letter) for each cell in the matrix
+        // Generar un carácter aleatorio (letra mayúscula) para cada celda en la matriz
         const randomChar = String.fromCharCode(65 + Math.floor(Math.random() * 26));
         row.push(randomChar);
       }
       sopa.push(row);
     }
   
-    // Place the words in the word search puzzle
+    // Colocar las palabras en la sopa de letras
     palabras.forEach(word => {
-      // Logic to place the word in the word search puzzle
-      // This will depend on the difficulty level
+      // Lógica para colocar la palabra en la sopa de letras
+      // Esto dependerá del nivel de dificultad
       switch(nivel) {
         case "facil":
-          placeWordVertically(word);
+          colocarPalabraVerticalmente(word);
           break;
         case "medio":
-          placeWordVertically(word);
-          placeWordHorizontally(word);
+          colocarPalabraVerticalmente(word);
+          colocarPalabraHorizontalmente(word);
           break;
         case "dificil":
-          placeWordVertically(word);
-          placeWordHorizontally(word);
-          placeWordDiagonally(word);
+          colocarPalabraVerticalmente(word);
+          colocarPalabraHorizontalmente(word);
+          colocarPalabraDiagonalmente(word);
           break;
       }
     });
 
-    // Function to place the word vertically in the word search puzzle
-    function placeWordVertically(word) {
+    // Función para colocar la palabra verticalmente en la sopa de letras
+    function colocarPalabraVerticalmente(word) {
       const wordLength = word.length;
       const startRow = Math.floor(Math.random() * (largo - wordLength + 1));
       const startCol = Math.floor(Math.random() * ancho);
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Function to place the word horizontally in the word search puzzle
-    function placeWordHorizontally(word) {
+    // Función para colocar la palabra horizontalmente en la sopa de letras
+    function colocarPalabraHorizontalmente(word) {
       const wordLength = word.length;
       const startRow = Math.floor(Math.random() * largo);
       const startCol = Math.floor(Math.random() * (ancho - wordLength + 1));
@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Function to place the word diagonally in the word search puzzle
-    function placeWordDiagonally(word) {
+    // Función para colocar la palabra diagonalmente en la sopa de letras
+    function colocarPalabraDiagonalmente(word) {
       const wordLength = word.length;
       const startRow = Math.floor(Math.random() * (largo - wordLength + 1));
       const startCol = Math.floor(Math.random() * (ancho - wordLength + 1));
@@ -95,41 +95,41 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  // Function to display the word search puzzle
+  // Función para mostrar la sopa de letras
   function mostrarSopa(sopa, titulo) {
-    // Print the word search puzzle to the console
+    // Imprimir la sopa de letras en la consola
     console.log(`Sopa de letras: ${titulo}`);
     sopa.forEach(row => {
       console.log(row.join(' '));
     });
 
-    // Display the word search puzzle in the DOM
-    // Create a table element
+    // Mostrar la sopa de letras en el DOM
+    // Crear un elemento de tabla
     const table = document.createElement('table');
 
-    // Iterate over each row in the word search puzzle
+    // Iterar sobre cada fila en la sopa de letras
     sopa.forEach(row => {
-      // Create a table row element
+      // Crear un elemento de fila de tabla
       const tr = document.createElement('tr');
 
-      // Iterate over each cell in the row
+      // Iterar sobre cada celda en la fila
       row.forEach(cell => {
-        // Create a table cell element
+        // Crear un elemento de celda de tabla
         const td = document.createElement('td');
-        // Set the cell content to the character
+        // Establecer el contenido de la celda como el carácter
         td.textContent = cell;
-        // Append the cell to the row
+        // Agregar la celda a la fila
         tr.appendChild(td);
       });
 
-      // Append the row to the table
+      // Agregar la fila a la tabla
       table.appendChild(tr);
     });
 
-    // Clear the existing content in sopaGenerada
+    // Borrar el contenido existente en sopaGenerada
     sopaGenerada.innerHTML = '';
 
-    // Append the table to sopaGenerada
+    // Agregar la tabla a sopaGenerada
     sopaGenerada.appendChild(table);
   }
 });
