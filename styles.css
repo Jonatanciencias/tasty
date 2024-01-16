@@ -16,12 +16,17 @@
   font-family: 'Oswald', sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   background-color: var(--fondo-claro);
   color: var(--oscuro-principal);
   padding: 1rem;
   text-align: center;
-  height: 10%;
+  height: 6.5rem;
   box-shadow: 0.05rem 0.05rem 1rem var(--gris-oscuro);
 }
 
@@ -32,6 +37,28 @@ header > h1 {
 
 header > p {
   font-size: 1.1rem;
+}
+
+footer {
+  height: 10%;
+  color: var(--gris-oscuro);
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+footer > p {
+  margin-left: 0.5rem;
+}
+
+footer > a > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
 }
 
 main {
