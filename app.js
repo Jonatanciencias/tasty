@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obtener el nivel de dificultad
     const nivel = document.getElementById('nivel').value;
 
-    // Generar la sopa de letras
+    // Lamado a la funcion para generar la sopa de letras
     const sopa = generarSopa(palabras, ancho, largo, nivel);
 
-    // Mostrar la sopa de letras
+    // LLamado a la funcion para mostrar la sopa de letras
     mostrarSopa(sopa, titulo);
   });
 
